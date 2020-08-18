@@ -1,5 +1,5 @@
 /*
-The last dimension should be large enough or using vect will be extremely slow.
+The last dimension should be large enough or using vect may be slow.
 */
 template <class T> auto vect(const T &v, int n) { return vector<T>(n, v); }
 template <class T, class... D> auto vect(const T &v, int n, D... m) {
