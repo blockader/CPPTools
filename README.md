@@ -2,7 +2,7 @@
 ## Introduction
 One way to implement a dynamic programming algorithm is through memoization and DFS. For Pythoners, a lru_cache(maxsize=None) function decorator will automatically help you to reuse previously calculated values. Can we implement this cute decorator in C++? The answer is yes! I will introduce my impementation.
 ## Implementation
-So, I think in C++, this decorator should be an object that can be called to construct a callable object from our DFS function. We should also be able to provide some addtional hints to allow the decorator to use arrays instead of hash tables when possible to make it widely useful. So, please see the code in lru_cache.pp for my implemenation. This may not be an opitmal way. So, feel free to contact me if you have any thought on this.
+So, I think in C++ this decorator should be an object that can be called to construct a callable object from our DFS function. We should also be able to provide some addtional hints to allow the decorator to use arrays instead of hash tables when possible to make it widely useful. So, please see the code in lru_cache.pp for my implemenation. This may not be an opitmal way. So, feel free to contact me if you have any thought on this.
 ## Usage
 ```cpp
 // https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/
