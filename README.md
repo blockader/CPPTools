@@ -43,6 +43,6 @@ This code allows one to create a multidimensional dynamic array based on std::ve
 Please see the [code](https://github.com/blockader/CPPTools/blob/master/vect.cpp) for my implementation.
 ## Usage
 ```cpp
-// A 2x2x2 array with all values initialized to zero is created.
+// A 2x2x2 integer array with all values initialized to zero is created.
 auto a=vect<int>(0,2,2,2);
 ```
