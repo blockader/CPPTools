@@ -1,4 +1,4 @@
-# lru_cache
+# lru_cache(maxsize=None) in C++
 ## Introduction
 One way to implement a dynamic programming algorithm is through memoization and DFS. For Pythoners, a lru_cache(maxsize=None) function decorator will automatically help you to reuse previously calculated values. Can we implement this cute decorator in C++? The answer is yes! I will introduce my impementation.
 ## Implementation
