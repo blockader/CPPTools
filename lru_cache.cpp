@@ -84,7 +84,9 @@ template <class F> bool sparse_<F>::e = false;
 template <class F> bool sparse_<F>::c = false;
 /*
 Decorating a function erases all cached values. Please save the resulting
-function if you want to use the old values.
+function if you want to use the old values. Because of the use of member
+variables, the decorators may not work when dealing with two functions of the
+same type. However, lambda functions have unique types, so they will be handled.
 */
 struct dense {
     auto convert() {}
