@@ -36,3 +36,8 @@ class Solution {
     }
 };
 ```
+# Multidimensional Arrays in C++
+## Introduction
+This code allows one to create a multidimensional dynamic array based on std::vector.
+## Implementation
+Please see the [code](https://github.com/blockader/CPPTools/blob/master/vect.cpp) for my implementation.
