@@ -1,3 +1,26 @@
+# Portable Linear Programming Solver in C++
+## Introduction
+This is a linear programming solver using the simplex algorithm. I have implemented not only the algorithm but also a user-friendly interface.
+## Usage
+[LeetCode 1601 Maximum Number of Achievable Transfer Requests](https://leetcode.com/problems/maximum-number-of-achievable-transfer-requests/
+```cpp
+class Solution {
+  public:
+    int maximumRequests(int n, vector<vector<int>> &requests) {
+        int m = requests.size();
+        vector<linear_programming::variable<>> v(m);
+        vector<linear_programming::constraint<>> c;
+        vector<linear_programming::expression<>> e(n);
+        linear_programming::expression<> t;
+        for (int i = 0; i < m; ++i)
+            c.push_back(v[i] >= 0), c.push_back(v[i] <= 1), t += v[i],
+                e[requests[i][0]] += v[i], e[requests[i][1]] -= v[i];
+        for (int i = 0; i < n; ++i)
+            c.push_back(e[i] >= 0), c.push_back(e[i] <= 0);
+        return round(linear_programming::maximize(t, c).value());
+    }
+};
+```
 # lru_cache(maxsize=None) in C++
 ## Introduction
 Please note this is actually not a LRU cache. This code implements the behavior of Python's functools.lru_cache when the maxsize parameter is None. So, the name comes from Python. One way to implement a dynamic programming algorithm is through memoization and DFS. For Pythoners, a lru_cache(maxsize=None) function decorator will automatically help you to reuse previously calculated values. Can we implement this cute decorator in C++? The answer is yes! I will introduce my impementation.
