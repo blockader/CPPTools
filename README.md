@@ -14,11 +14,17 @@ class Solution {
         vector<linear_programming::constraint<>> c;
         vector<linear_programming::expression<>> e(n);
         linear_programming::expression<> t;
-        for (int i = 0; i < m; ++i)
-            c.push_back(v[i] >= 0), c.push_back(v[i] <= 1), t += v[i],
-                e[requests[i][0]] += v[i], e[requests[i][1]] -= v[i];
-        for (int i = 0; i < n; ++i)
-            c.push_back(e[i] >= 0), c.push_back(e[i] <= 0);
+        for (int i = 0; i < m; ++i) {
+            c.push_back(v[i] >= 0);
+            c.push_back(v[i] <= 1);
+            t += v[i];
+            e[requests[i][0]] += v[i];
+            e[requests[i][1]] -= v[i];
+        }
+        for (int i = 0; i < n; ++i) {
+            c.push_back(e[i] >= 0);
+            c.push_back(e[i] <= 0);
+        }
         return round(linear_programming::maximize(t, c).value());
     }
 };
