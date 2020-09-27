@@ -1,6 +1,8 @@
 # Portable Linear Programming Solver in C++
 ## Introduction
 This is a linear programming solver using the simplex algorithm. I have implemented not only the algorithm but also a user-friendly interface.
+## Implementation
+See linear_programming.cpp.
 ## Usage
 [LeetCode 1601 Maximum Number of Achievable Transfer Requests](https://leetcode.com/problems/maximum-number-of-achievable-transfer-requests/
 ```cpp
